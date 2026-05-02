@@ -1,0 +1,429 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Shopxbd Admin - Management Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e9ddff",
+                        "primary": "#4f378a",
+                        "on-primary-container": "#e0d2ff",
+                        "secondary": "#63597c",
+                        "outline": "#7a7582",
+                        "on-secondary-container": "#645a7d",
+                        "outline-variant": "#cbc4d2",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e6e0e9",
+                        "surface": "#fdf7ff",
+                        "on-secondary-fixed": "#1f1635",
+                        "primary-container": "#6750a4",
+                        "on-background": "#1d1b20",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#503d00",
+                        "on-surface-variant": "#494551",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "inverse-surface": "#322f35",
+                        "inverse-on-surface": "#f5eff7",
+                        "secondary-container": "#e1d4fd",
+                        "surface-container-high": "#ece6ee",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f2ecf4",
+                        "tertiary": "#765b00",
+                        "surface-bright": "#fdf7ff",
+                        "on-surface": "#1d1b20",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "on-error-container": "#93000a",
+                        "background": "#fdf7ff",
+                        "inverse-primary": "#cfbcff",
+                        "secondary-fixed": "#e9ddff",
+                        "on-primary-fixed": "#22005d",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#ded8e0",
+                        "tertiary-fixed": "#ffdf93",
+                        "surface-tint": "#6750a4",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "tertiary-container": "#c9a74d",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-low": "#f8f2fa",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e6e0e9",
+                        "primary-fixed-dim": "#cfbcff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "lg": "24px",
+                        "gutter": "20px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "bengali-support": ["Inter"],
+                        "display": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                        "title-lg": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "bengali-support": ["110%", {"lineHeight": "1.8"}],
+                        "display": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-lg": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .zebra-table tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest font-body-md text-on-background min-h-screen flex">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 border-r border-slate-200 bg-slate-50 flex flex-col p-4 gap-2 fixed left-0 top-0 z-50">
+<div class="mb-8 px-2">
+<h1 class="font-bold text-violet-800 text-title-lg">Shopxbd Admin</h1>
+<p class="text-slate-600 text-label-lg">Management Portal</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 text-slate-600 px-4 py-2 hover:bg-slate-200 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-violet-100 text-violet-800 rounded-lg px-4 py-2 font-semibold transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-inter text-sm">Orders</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 px-4 py-2 hover:bg-slate-200 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-inter text-sm">Products</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 px-4 py-2 hover:bg-slate-200 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-inter text-sm">Categories</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 px-4 py-2 hover:bg-slate-200 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="view_carousel">view_carousel</span>
+<span class="font-inter text-sm">Banners</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200 pt-4 space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 mb-2">
+<img alt="Admin Avatar" class="w-10 h-10 rounded-full border border-slate-200" data-alt="A professional headshot of a corporate administrative professional with a friendly expression. The person is wearing a clean charcoal grey blazer. The background is a soft, out-of-focus modern office environment with warm indoor lighting and clean lines. The image follows a high-key, modern aesthetic consistent with a corporate management portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwVi6q5GeEID3K0HRioPpb7LD7u5E_nWGNjaFe6_jk3FyquK9o78gt806bvW5G34PCFKRE3xPoOvPjCbek7wEYexrDQrQv9iyiR826v5K3Ri_hDTHPUG4yrOo57oZErLrZzTHmemKvoOLx5kymZ-l-aivFrGCEgYLVv_VNhL676hBUdxTtnUkUw6KqEsXv0mRbEqdQwEWtJ5n1FSAxiPru-EwU5O0R7T-8AZ52U98qIr9UkK_vZ26jCPlLBu7eiqNCBxI3II1bW00">
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-slate-900 truncate">Admin User</p>
+<p class="text-xs text-slate-500 truncate">admin@shopxbd.com</p>
+</div>
+</div>
+<a class="flex items-center gap-3 text-slate-600 px-4 py-2 hover:bg-slate-200 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-error px-4 py-2 hover:bg-error-container/20 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-inter text-sm">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-grow ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar Shell -->
+<header class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40">
+<div class="flex justify-between items-center px-6 py-3 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<h2 class="text-headline-md font-headline-md text-on-surface">Order Management</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</span>
+<input class="pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:border-primary text-sm w-64 bg-slate-50" placeholder="Search orders..." type="text">
+</div>
+<button class="flex items-center gap-2 px-4 py-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Canvas Content -->
+<div class="p-8 max-w-7xl mx-auto w-full">
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center justify-between">
+<div>
+<p class="text-label-lg text-slate-500 uppercase mb-1">Total Orders</p>
+<h3 class="text-display font-display text-primary">1,284</h3>
+<p class="text-xs text-green-600 flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                            +12.5% from last month
+                        </p>
+</div>
+<div class="bg-primary-fixed p-3 rounded-full text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="inventory">inventory</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center justify-between">
+<div>
+<p class="text-label-lg text-slate-500 uppercase mb-1">Total Products</p>
+<h3 class="text-display font-display text-secondary">452</h3>
+<p class="text-xs text-slate-500 mt-2">Across 18 categories</p>
+</div>
+<div class="bg-secondary-container p-3 rounded-full text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center justify-between">
+<div>
+<p class="text-label-lg text-slate-500 uppercase mb-1">Total Revenue</p>
+<h3 class="text-display font-display text-tertiary">৳450,230</h3>
+<p class="text-xs text-green-600 flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                            +8.2% from last month
+                        </p>
+</div>
+<div class="bg-tertiary-fixed p-3 rounded-full text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="payments">payments</span>
+</div>
+</div>
+</div>
+<!-- Recent Orders Section -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] overflow-hidden">
+<div class="px-6 py-5 border-b border-slate-100 flex justify-between items-center">
+<h3 class="text-title-lg font-title-lg text-on-surface">Recent Orders</h3>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-slate-200 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                            Filter
+                        </button>
+<button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                            Export CSV
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse zebra-table">
+<thead class="bg-slate-50 text-slate-500 text-label-lg uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4 font-semibold">Order ID</th>
+<th class="px-6 py-4 font-semibold">Customer Name</th>
+<th class="px-6 py-4 font-semibold">Mobile Number</th>
+<th class="px-6 py-4 font-semibold">Location</th>
+<th class="px-6 py-4 font-semibold">Total Price</th>
+<th class="px-6 py-4 font-semibold">Status</th>
+<th class="px-6 py-4 font-semibold">Actions</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface-variant">
+<!-- Row 1 -->
+<tr class="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 font-medium text-primary">#ORD-9821</td>
+<td class="px-6 py-4">Ariful Islam</td>
+<td class="px-6 py-4">+880 1712-345678</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Dhaka</span>
+<span class="text-xs text-slate-500">Uttara, Sector 4</span>
+</div>
+</td>
+<td class="px-6 py-4 font-bold text-on-surface">৳2,450</td>
+<td class="px-6 py-4">
+<select class="bg-amber-50 text-amber-700 border-amber-200 rounded-lg text-xs font-bold px-2 py-1 focus:ring-0 focus:border-amber-400">
+<option selected="">Pending</option>
+<option>Processing</option>
+<option>Delivered</option>
+</select>
+</td>
+<td class="px-6 py-4">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 font-medium text-primary">#ORD-9822</td>
+<td class="px-6 py-4">Farhana Akhtar</td>
+<td class="px-6 py-4">+880 1911-876543</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Chattogram</span>
+<span class="text-xs text-slate-500">Agrabad, Block A</span>
+</div>
+</td>
+<td class="px-6 py-4 font-bold text-on-surface">৳12,800</td>
+<td class="px-6 py-4">
+<select class="bg-blue-50 text-blue-700 border-blue-200 rounded-lg text-xs font-bold px-2 py-1 focus:ring-0 focus:border-blue-400">
+<option>Pending</option>
+<option selected="">Processing</option>
+<option>Delivered</option>
+</select>
+</td>
+<td class="px-6 py-4">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 font-medium text-primary">#ORD-9823</td>
+<td class="px-6 py-4">Sohail Rana</td>
+<td class="px-6 py-4">+880 1515-998877</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Sylhet</span>
+<span class="text-xs text-slate-500">Zindabazar</span>
+</div>
+</td>
+<td class="px-6 py-4 font-bold text-on-surface">৳850</td>
+<td class="px-6 py-4">
+<select class="bg-green-50 text-green-700 border-green-200 rounded-lg text-xs font-bold px-2 py-1 focus:ring-0 focus:border-green-400">
+<option>Pending</option>
+<option>Processing</option>
+<option selected="">Delivered</option>
+</select>
+</td>
+<td class="px-6 py-4">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 font-medium text-primary">#ORD-9824</td>
+<td class="px-6 py-4">Nusrat Jahan</td>
+<td class="px-6 py-4">+880 1814-112233</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Rajshahi</span>
+<span class="text-xs text-slate-500">Boalia, Upazila Rd</span>
+</div>
+</td>
+<td class="px-6 py-4 font-bold text-on-surface">৳5,600</td>
+<td class="px-6 py-4">
+<select class="bg-amber-50 text-amber-700 border-amber-200 rounded-lg text-xs font-bold px-2 py-1 focus:ring-0 focus:border-amber-400">
+<option selected="">Pending</option>
+<option>Processing</option>
+<option>Delivered</option>
+</select>
+</td>
+<td class="px-6 py-4">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 font-medium text-primary">#ORD-9825</td>
+<td class="px-6 py-4">Kabir Ahmed</td>
+<td class="px-6 py-4">+880 1711-223344</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Khulna</span>
+<span class="text-xs text-slate-500">Sonadanga</span>
+</div>
+</td>
+<td class="px-6 py-4 font-bold text-on-surface">৳1,200</td>
+<td class="px-6 py-4">
+<select class="bg-blue-50 text-blue-700 border-blue-200 rounded-lg text-xs font-bold px-2 py-1 focus:ring-0 focus:border-blue-400">
+<option>Pending</option>
+<option selected="">Processing</option>
+<option>Delivered</option>
+</select>
+</td>
+<td class="px-6 py-4">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+<p class="text-xs text-slate-500">Showing 1 to 5 of 1,284 entries</p>
+<div class="flex gap-1">
+<button class="px-3 py-1 border border-slate-200 rounded text-xs font-medium text-slate-400 cursor-not-allowed">Previous</button>
+<button class="px-3 py-1 bg-primary text-white rounded text-xs font-medium">1</button>
+<button class="px-3 py-1 border border-slate-200 rounded text-xs font-medium text-slate-600 hover:bg-white">2</button>
+<button class="px-3 py-1 border border-slate-200 rounded text-xs font-medium text-slate-600 hover:bg-white">3</button>
+<button class="px-3 py-1 border border-slate-200 rounded text-xs font-medium text-slate-600 hover:bg-white">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto bg-slate-100 border-t border-slate-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 py-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-2">
+<h4 class="font-bold text-lg text-slate-900 mb-4">Shopxbd Admin</h4>
+<p class="text-slate-500 text-body-md max-w-md">Bridging the gap between traditional Bangladeshi commerce and modern digital efficiency. A robust management system for groceries and high-tech consumer electronics.</p>
+</div>
+<div>
+<h5 class="font-inter text-xs uppercase tracking-wider text-violet-700 font-bold mb-4">Support Links</h5>
+<ul class="space-y-2 text-slate-500 text-xs">
+<li class=""><a class="hover:text-violet-600 underline" href="#">Privacy Policy</a></li>
+<li class=""><a class="hover:text-violet-600 underline" href="#">Refund Policy</a></li>
+<li class=""><a class="hover:text-violet-600 underline" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-inter text-xs uppercase tracking-wider text-violet-700 font-bold mb-4">System Status</h5>
+<div class="flex items-center gap-2 text-xs text-green-600">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                        All Systems Operational
+                    </div>
+</div>
+</div>
+<div class="border-t border-slate-200 py-4 text-center">
+<p class="text-slate-500 text-xs font-inter uppercase tracking-widest">© 2024 Shopxbd E-commerce. All rights reserved.</p>
+</div>
+</footer>
+</main>
+<!-- Contextual FAB (Only for Dashboard/Main Canvas) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+
+
+</body></html>
